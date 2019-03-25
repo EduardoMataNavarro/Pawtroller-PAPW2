@@ -38,3 +38,6 @@ Route::get('/lostPets', function(){
 Route::get('/pet', function(){
     return view('pages.pet');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
