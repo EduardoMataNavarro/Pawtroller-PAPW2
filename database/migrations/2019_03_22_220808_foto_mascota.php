@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Perdido extends Migration
+class FotoMascota extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,10 @@ class Perdido extends Migration
     public function up()
     {
         //
-        Schema::create('perdido', function (Blueprint $table) {
-            $table->increments('id_perdida')->unsigned();
-            $table->string('lugar');
-            $table->string('info_adicional');
-            $table->timestamp('created_at')->nullable();
+        Schema::create('imagenMascota', function (Blueprint $table) {
+            $table->increments('id_imagen')->unsigned();
+            $table->string('path');
+            $table->string('format');
             $table->integer('id_mascota')->unsigned();
 
             $table->foreign('id_mascota')->references('id_mascota')->on('mascota');
@@ -33,6 +32,6 @@ class Perdido extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('perdido');
+        Schema::dropIfExists('imagenMascota');
     }
 }

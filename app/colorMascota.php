@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Perdido extends Model
+class colorMascota extends Model
 {
     //
     public function Mascota()
     {
-        return $this->belongsTo('App\Mascota');
+        return $this->belongsToMany('App\Mascota');
     }
 }

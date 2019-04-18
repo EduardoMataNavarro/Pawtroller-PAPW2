@@ -14,6 +14,17 @@ class Comentario extends Migration
     public function up()
     {
         //
+        Schema::create('comentario', function (Blueprint $table) {
+            $table->increments('id_comentario')->unsigned();
+            $table->string('comentario');
+            $table->integer('id_publicacion')->unsigned();
+            $table->integer('id_usuario')->unsigned();
+            $table->boolean('reportado');
+            $table->timestamp('created_at')->nullable();
+
+            $table->foreign('id_publicacion')->references('id_publicacion')->on('publicacion');
+            $table->foreign('id_usuario')->references('id_usuario')->on('users');
+        });
     }
 
     /**
@@ -24,5 +35,6 @@ class Comentario extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('comentario');
     }
 }

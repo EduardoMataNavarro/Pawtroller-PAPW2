@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolesTable extends Migration
+class CreateColorMascotasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('rol', function (Blueprint $table) {
-            $table->increments('id_rol');
-            $table->text('descripcion');
-            $table->integer('relevancia');
+        Schema::create('colorMascota', function (Blueprint $table) {
+            $table->increments('id_color')->unsigned();
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rol');
+        Schema::dropIfExists('colorMascota');
     }
 }
