@@ -14,7 +14,8 @@ class Publicacion extends Migration
     public function up()
     {
         //
-        Schema::create('publicacion', function (Blueprint $table) {
+        Schema::create('publicacions', function (Blueprint $table) {
+            $table->softDeletes();
             $table->increments('id_publicacion')->unsigned();
             $table->string('titulo');
             $table->string('texto');
@@ -22,7 +23,7 @@ class Publicacion extends Migration
             $table->integer('id_usuario')->unsigned();
             $table->boolean('reportado');
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('users');
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 

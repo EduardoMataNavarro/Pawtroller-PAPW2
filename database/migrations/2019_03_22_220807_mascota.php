@@ -15,16 +15,17 @@ class Mascota extends Migration
     {
         //
         Schema::create('mascota', function (Blueprint $table) {
+            $table->softDeletes();
             $table->increments('id_mascota')->unsigned();
             $table->string('nombreMascota');
             $table->timestamp('created_at')->nullable();
-            $table->enum('status', array('bien', 'perdido', 'difunto'));
+            $table->tinyInteger('status')->unsigned();
             $table->integer('id_usuario')->unsigned();
             $table->integer('id_raza')->unsigned();
             $table->integer('id_color')->unsigned();
             $table->string('comentarios');
 
-            $table->foreign('id_usuario')->references('id_usuario')->on('users');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->foreign('id_raza')->references('id_raza')->on('raza');
             $table->foreign('id_color')->references('id_color')->on('colorMascota');
         });

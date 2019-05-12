@@ -15,6 +15,7 @@ class Raza extends Migration
     {
         //
         Schema::create('raza', function (Blueprint $table) {
+            $table->softDeletes();
             $table->increments('id_raza')->unsigned();
             $table->string('descripcion');
         });

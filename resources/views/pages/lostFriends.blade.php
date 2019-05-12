@@ -10,13 +10,8 @@
             <div class="row">
                 <div class="col-2">
                     <form action="" method="get">
-                        <label for="pet-type-combo">Tipo</label>
+                        <label for="pet-type-combo">Raza</label>
                         <select name="pet-type" id="pet-type-combo" class="form-control">
-                            <option value="exotico">Exotico</option>
-                            <option value="ave">Ave</option>
-                            <option value="perro">Perro</option>
-                            <option value="gato">Gato</option>
-                            <option value="ganado">Ganado</option>
                         </select>
                         <button class="btn btn-login" type="button">
                             Filtrar

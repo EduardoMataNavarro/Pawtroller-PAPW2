@@ -14,6 +14,7 @@ class CreateRolesTable extends Migration
     public function up()
     {
         Schema::create('rol', function (Blueprint $table) {
+            $table->softDeletes();
             $table->increments('id_rol');
             $table->text('descripcion');
             $table->integer('relevancia');

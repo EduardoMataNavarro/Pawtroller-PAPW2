@@ -17,33 +17,60 @@
             </nav>
                 <div class="tab-content container-fluid" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-                        <form action="/user/login">
+                        <form method="POST" action="{{route('login')}}">
                             @csrf
                             <label for="">Correo</label>
-                            <input type="mail" name="" id="" class="form-control">
+                            <input type="email" name="email" id="email" value="{{old('email')}}" class="form-control" required>
+                            
+                            @if($errors->has('email'))
+                            <br>
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first('email') }}
+                            </div>
+                            @endif
+
                             <label for="">Contraseña</label>
-                            <input type="password" name="" id="" class="form-control">
+                            <input type="password" name="password" id="password" class="form-control" require>
+
+                            @if($errors->has('password'))
+                            <br>
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first('password') }}
+                            </div>
+                            @endif
+
                             <button type="submit" class="btn btn-login">
                                 Ingresar   
                             </button>
+                            <br>
+                            @if (Route::has('password.request'))
+                                <a class="btn btn-link" href="{{route('password.request')}}">
+                                    ¿Olvidó su contraseña?
+                                </a>
+                            @endif
                         </form>
                     </div>
                     <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
-                        <form action="/user/register">
+                        <form method="POST" action="{{route('register')}}">
                             @csrf
                             <label for="">Nombre</label>
-                            <input type="text" name="" id="" class="form-control">
+                            <input type="text" name="name" id="" class="form-control">
+                            <label for="">Apellido</label>
+                            <input type="text" name="apellido" id="" class="form-control">
+                            <label for="">Nickname</label>
+                            <input type="text" name="nickname" id="" class="form-control">
                             <label for="">Correo</label>
-                            <input type="mail" name="" id="" class="form-control">
+                            <input type="mail" name="email" id="" class="form-control">
                             <label for="">Contraseña</label>
-                            <input type="password" name="" id="" class="form-control">
+                            <input type="password" name="password" id="" class="form-control">
                             <label for="">Confirmar contraseña</label>
-                            <input type="password" name="" id="" class="form-control">
+                            <input type="password" name="password_confirmation" id="" class="form-control">
                             <label for="">Telefono (opcional)</label>
-                            <input type="tel" name="" id="" class="form-control">
+                            <input type="tel" name="telefono" id="" class="form-control">
                             <button type="submit" class="btn btn-login">
                                 Registrarse 
                             </button>
+                            <hr>
                         </form>
                     </div>
                 </div>

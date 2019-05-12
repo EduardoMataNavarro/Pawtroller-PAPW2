@@ -14,10 +14,13 @@ class Perdido extends Migration
     public function up()
     {
         //
-        Schema::create('perdido', function (Blueprint $table) {
+        Schema::create('perdidos', function (Blueprint $table) {
+            $table->softDeletes();
             $table->increments('id_perdida')->unsigned();
-            $table->string('lugar');
+            $table->string('lugar')->nullable();
             $table->string('info_adicional');
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->integer('id_mascota')->unsigned();
 

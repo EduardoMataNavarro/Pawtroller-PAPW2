@@ -11,18 +11,60 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.landing');
-});
+/*
+    User
+*/
 
-Route::get('login', function(){
-    return view('pages.login-signup');
-});
+Auth::routes();
 
-Route::get('/profile', function(){
-    return view('pages.profile');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/sign', 'Auth\LoginController@showLogin')->name('sign');
+
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+
+Route::post('/register', 'Auth\RegisterController@register')->name('register');
+
+Route::get('/profile/{id}','userController@show')->name('profile');
+
+Route::get('/logout','userController@logOut')->name('logout');
+
+/*
+    Pets
+*/
+
+Route::get('/pet/{id}','petController@show')->name('pet');
+
+Route::post('/registerpet','petController@create')->name('registerpet');
+
+Route::post('/editpet','petController@edit')->name('editpet');
+
+Route::get('/lostpets','petController@showLostPets')->name('lostpets');
+
+/* 
+    Posts
+*/
+Route::get('/posts','postController@showPosts')->name('posts');
+
+Route::get('/post/{id}','postController@showPost')->name('showpost');
+
+Route::post('/createpost','postController@create')->name('createpost');
+
+Route::post('/deletepost','postController@delete')->name('deletepost');
+
+/*
+    Comments
+*/
+Route::post('/createcomment','commentController@create')->name('createcomment');
+Route::post('/deletecomment','commentController@delete')->name('deletecomment');
+
+/*
+    Perdido
+*/
+Route::post('/registerperdido','perdidoController@create')->name('registrarperdido');
+
+
+/*
 Route::get('/forum', function(){
     return view('pages.forum');
 });
@@ -37,7 +79,4 @@ Route::get('/lostPets', function(){
 
 Route::get('/pet', function(){
     return view('pages.pet');
-});
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+});*/

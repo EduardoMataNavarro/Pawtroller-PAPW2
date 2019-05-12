@@ -17,12 +17,19 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbar-content">
+            <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
                 <div class="navbar-nav">
                 <a class="nav-item nav-link" href="/">Home</a>
-                <a class="nav-item nav-link" href="/lostPets">Find</a>
+                <a class="nav-item nav-link" href="/lostpets">Find</a>
                 <a class="nav-item nav-link" href="/forum">Forum</a>
-                <a class="nav-item nav-link" href="/login">Account</a>
+                @if(Auth()->check())
+                <a class="nav-item nav-link" href="/profile/{{Auth::user()->id}}">
+                    <img src="" alt="" width="15px" height="15px">
+                    {{Auth::user()->name}}
+                </a>
+                @else
+                <a class="nav-item nav-link" href="/sign">Login / Register</a>
+                @endif
                 </div>
             </div>
         </nav>

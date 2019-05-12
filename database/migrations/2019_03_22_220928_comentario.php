@@ -15,15 +15,17 @@ class Comentario extends Migration
     {
         //
         Schema::create('comentario', function (Blueprint $table) {
+            $table->softDeletes();
             $table->increments('id_comentario')->unsigned();
             $table->string('comentario');
             $table->integer('id_publicacion')->unsigned();
             $table->integer('id_usuario')->unsigned();
+            $table->integer('rating')->unsigned()->default(0);
             $table->boolean('reportado');
             $table->timestamp('created_at')->nullable();
 
-            $table->foreign('id_publicacion')->references('id_publicacion')->on('publicacion');
-            $table->foreign('id_usuario')->references('id_usuario')->on('users');
+            $table->foreign('id_publicacion')->references('id_publicacion')->on('publicacions');
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 
