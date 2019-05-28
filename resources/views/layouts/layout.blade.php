@@ -4,9 +4,11 @@
         <title>Pawtroller - @yield("page-title")</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="{{asset('img/icon.ico')}}" type="image/x-icon">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
         <link rel="stylesheet" href="{{ asset('css/mainStyle.css') }}">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -24,7 +26,7 @@
                 <a class="nav-item nav-link" href="/forum">Forum</a>
                 @if(Auth()->check())
                 <a class="nav-item nav-link" href="/profile/{{Auth::user()->id}}">
-                    <img src="" alt="" width="15px" height="15px">
+                    <img src=" {{ Auth::user()->avatarPicPath }} " alt="" width="25px" height="25px">
                     {{Auth::user()->name}}
                 </a>
                 @else

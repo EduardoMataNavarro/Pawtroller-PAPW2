@@ -20,10 +20,14 @@ class Publicacion extends Migration
             $table->string('titulo');
             $table->string('texto');
             $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->integer('id_usuario')->unsigned();
             $table->boolean('reportado');
+            $table->integer('id_categoria')->unsigned();
+            $table->boolean('borrador');
 
             $table->foreign('id_usuario')->references('id')->on('users');
+            $table->foreign('id_categoria')->references('id_categoria')->on('categoria_publicacions');
         });
     }
 

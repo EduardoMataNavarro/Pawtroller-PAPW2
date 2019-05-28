@@ -14,13 +14,14 @@ class VideoMascota extends Migration
     public function up()
     {
         //
-        Schema::create('videoMascota', function (Blueprint $table) {
+        Schema::create('video_mascotas', function (Blueprint $table) {
             $table->increments('id_video')->unsigned();
             $table->string('path');
             $table->string('format');
             $table->integer('id_mascota')->unsigned();
+            $table->timestamps();
 
-            $table->foreign('id_mascota')->references('id_mascota')->on('mascota');
+            $table->foreign('id_mascota')->references('id_mascota')->on('mascotas');
         });
     }
 

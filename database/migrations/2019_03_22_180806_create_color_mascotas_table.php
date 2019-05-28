@@ -13,7 +13,7 @@ class CreateColorMascotasTable extends Migration
      */
     public function up()
     {
-        Schema::create('colorMascota', function (Blueprint $table) {
+        Schema::create('color_mascotas', function (Blueprint $table) {
             $table->softDeletes();
             $table->increments('id_color')->unsigned();
             $table->string('descripcion');

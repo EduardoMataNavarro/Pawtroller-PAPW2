@@ -12,253 +12,253 @@ class RazaTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Mestizo'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Alano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'American Bully'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Antiguo Pastor Ingles'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'American Stafford'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Akita Inu'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Basset Hound'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Basset Azul'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Basset Leonado'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Border Collie'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Beagle'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Bichon Maltes'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Bloodhound'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Border Collie'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Boston Terrier'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Boyero Australiano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Border Collie'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Boxer'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Bulldog Americano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Bulldog Ingles'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Bulldog Frances'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Bull Terrier'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Bullmastiff'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Caniche'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Crestado Chino'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Chihuahua'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Chow Chow'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Cocker Spaniel'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Collie'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Dalmata'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Doberman'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Dogo Argentino'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Dogo de Burdeos'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Fox terrier'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Foxhound'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Galgo'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Galgo italiano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Galgo afgano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Galgo espanol'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Golden retriever'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Gran Danes'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Husky Siberiano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Komondor'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Kerry Blue Terrier'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Labrador'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Laika'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Lobo de Sarlo'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Lobero Irlandes'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Mastin Espanol'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Mastin Napolitano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Mastin Ingles'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Mastin del Pirineo'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Maltes'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Aleman'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Ingles'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Australiano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Ganadero Australiano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Belga Malinois'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Blanco'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Catalan'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Holandes'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Rumano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pastor Vasco'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Perro de Agua'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Perro sin pelo Peruano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pekines'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Poodle'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Pug'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Rottwiler'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Samoyedo'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'San Bernardo'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Setter'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Schnauzer'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Shi Tzu'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Shar Pei'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Terrier Escoces'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Terrier Ingles'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Terrier Irlandes'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Terrier Gales'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Terrier Tibetano'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Weimaraner'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Whippet'
         ]);
-        DB::table('raza')->insert([
+        DB::table('razas')->insert([
             'descripcion' => 'Yorkshire Terrier'
         ]);
     }

@@ -31,16 +31,21 @@ class LoginController extends Controller
     public function login(){
         
         $credentials = $this->validate(request(), [
-            'email' => 'email|required|string',
+            'name' => 'required|string',
             'password' => 'required|string'
         ]);
+        
+        $login_type = filter_var(request()->input('name'), FILTER_VALIDATE_EMAIL) ? 'email' : 'nickname';
 
-        if(Auth::attempt($credentials))
+        request()->merge([
+            $login_type => request()->input('name')
+        ]);
+        if(Auth::attempt(request()->only($login_type, 'password')))
         {
             return redirect()->route('home');
         }
          
-        return back()->withErrors(['email' => trans('auth.failed')])->withInput(request(['email']));
+        return back()->withErrors(['email' => trans('auth.failed')])->withInput(request(['name']));
     }
 
     /*

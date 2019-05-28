@@ -9,6 +9,10 @@ class Comentario extends Model
 {
     use SoftDeletes;
     //
+    protected $fillable = [
+        'comentario', 'id_publicacion', 'id_usuario', 'rating', 'reportado',
+    ];
+
     public function Comentario()
     {
         return $this->belongsTo('App\Publicacion');

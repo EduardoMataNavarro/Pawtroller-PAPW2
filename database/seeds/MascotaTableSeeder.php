@@ -12,18 +12,18 @@ class MascotaTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('mascota')->insert([
+        DB::table('mascotas')->insert([
             'nombreMascota' => 'Marrano',
-            'status' => 2,
+            'id_status' => 2,
             'id_usuario' => 2,
             'id_raza' => 1,
             'id_color' => 4,
             'comentarios' => 'Amistoso, tiende a lamer mucho'
         ]);
         
-        DB::table('mascota')->insert([
+        DB::table('mascotas')->insert([
             'nombreMascota' => 'Juanito',
-            'status' => 1,
+            'id_status' => 1,
             'id_usuario' => 3,
             'id_raza' => 4,
             'id_color' => 6,

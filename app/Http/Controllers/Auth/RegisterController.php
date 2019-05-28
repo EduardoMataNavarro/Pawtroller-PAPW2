@@ -74,6 +74,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'telefono' => $data['telefono'],
             'id_rol' => 2,
+            'bannerPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/cut.jpg",
+            'avatarPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/user-generic-photo.jpg",
         ]);
     }
 }

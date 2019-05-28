@@ -9,6 +9,10 @@ class Mascota extends Model
 {
     use SoftDeletes;
     //
+    protected $fillable = [
+        'nombreMascota', 'id_status', 'id_usuario','id_raza', 'id_color', 'comentarios',
+    ];
+
     public function User()
     {
         return $this->belongsTo('app\User');
@@ -32,5 +36,8 @@ class Mascota extends Model
     public function Color()
     {
         return $this->hasOne('App\colorMascota');
+    }
+    public function Status(){
+        return $this->hasOne('App\StatusMascota');
     }
 }

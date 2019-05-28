@@ -19,7 +19,9 @@ class UserTableSeeder extends Seeder
             'nickname' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin123'),
-            'id_rol' => 4
+            'id_rol' => 4,
+            'bannerPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/cut.jpg",
+            'avatarPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/user-generic-photo.jpg",
         ]);
         
         DB::table('users')->insert([
@@ -28,7 +30,9 @@ class UserTableSeeder extends Seeder
             'nickname' => 'RigoTovar',
             'email' => 'rigoTovar@admin.com',
             'password' => bcrypt('rigo123'),
-            'id_rol' => 3
+            'id_rol' => 3,
+            'bannerPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/cut.jpg",
+            'avatarPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/user-generic-photo.jpg",
         ]);
         DB::table('users')->insert([
             'name' => 'Eduardo',
@@ -36,7 +40,9 @@ class UserTableSeeder extends Seeder
             'nickname' => 'EdwardBot5000',
             'email' => 'ed_ward98_ed@hotmail.com',
             'password' => bcrypt('edward123'),
-            'id_rol' => 2
+            'id_rol' => 2,
+            'bannerPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/cut.jpg",
+            'avatarPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/user-generic-photo.jpg",
         ]);
         DB::table('users')->insert([
             'name' => 'Carlos',
@@ -44,7 +50,9 @@ class UserTableSeeder extends Seeder
             'nickname' => 'Tito',
             'email' => 'Tito.1998@hotmail.com',
             'password' => bcrypt('Tito123'),
-            'id_rol' => 2
+            'id_rol' => 2,
+            'bannerPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/cut.jpg",
+            'avatarPicPath' => "https://s3.us-east-2.amazonaws.com/pawtroller-images/userimg/banner/user-generic-photo.jpg",
         ]);
     }
 }

@@ -12,7 +12,7 @@ class ComentarioTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('comentario')->insert([
+        DB::table('comentarios')->insert([
             'comentario' => 'Si',
             'id_publicacion' => 2,
             'id_usuario' => 4,

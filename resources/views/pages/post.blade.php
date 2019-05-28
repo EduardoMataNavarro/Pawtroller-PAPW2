@@ -8,101 +8,100 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/forum">Foro</a></li>
-                    <li class="breadcrumb-item"><a href="/forum">Mascotas</a></li>
+                    <li class="breadcrumb-item"><a href="/forum/category/{{ $postContent->categoria }}"> {{ $postContent->categoria }} </a></li>
                     <li class="breadcrumb-item active"></li>
                 </ol>
             </nav>
             <br>
             <div class="row" id="original-post-container">
+                {{ $postContent->reportado ? __('<div class="w-100"> <p class="alert alert-warning">La publicacion ha sido reportada</p></div>') : '' }}
                 <div class="d-none d-sm-block col-sm-2">
                     <img src="{{asset('img/user-img/user-generic-photo.jpg')}}" class="forum-post-user-img" alt="Avatar img">
                 </div>
                 <div class="col-xs-8 col-sm-10 col-md-9 col-lg-8">
-                    <h4>¿A qué edad le puedo dar croquetas a mi perrito?</h4>
-                    <h5>Fulano de tal</h5>
-                    <h6><i class="far fa-clock"></i> 3 de enero de 2019 - 2:30pm</h6>
-                    <span class="badge badge-success">Cachorros</span>
-                    <span class="badge badge-success">Perros</span>
+                    <h4> {{ $postContent->titulo }} </h4>
+                    <h5><a href="/profile/{{ $postContent->id }}" target="_blank"> {{ $postContent->nickname }} </a></h5>
+                    <h6><i class="far fa-clock"></i> {{ $postContent->created_at }} </h6>
                     <br>
                     <br>
-                    <p>
-                        Hola, tengo un perrito que Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Nam laboriosam possimus rerum officiis. Praesentium nesciunt aspernatur, 
-                        ex doloribus ut id velit delectus quis iusto? Vitae odit laboriosam nihil ipsa repellendus!
-                        y quería saber si me podrían ayudar.
-                    </p>
+                    <p> {{ $postContent->texto }} </p>
                 </div>
-                <div class="col-10">
-                    <button type=button class="btn btn-success">
+                <div class="col-12" style="margin-top: 25px;">
+                    @if(Auth()->check())
+                    <button type=button class="btn btn-success rate goodRate" _pst-id="{{$postContent->id_publicacion}}">
                         <i class="fas fa-thumbs-up"></i>
                     </button>
-                    <span class="text-success">
-                        15
+                    <span class="text-success" id="goodRatings">
+                        {{ $postGoodRating }}
                     </span>
-                    <button type=button class="btn btn-danger">
+                    <button type=button class="btn btn-danger rate badRate" _pst-id="{{$postContent->id_publicacion}}">
                         <i class="fas fa-thumbs-down"></i>
                     </button>
-                    <span class="text-danger">
-                        5
+                    <span class="text-danger" id="badRatings">
+                        {{ $postBadRating }}
                     </span>
-                </div>
-                <div class="col-2">
-                    <button class="btn btn-secondary font-weight-light">
+                    @endif
+                    
+                    @if(Auth()->check())
+                    <button class="btn btn-secondary font-weight-light float-right">
                         Reportar
                     </button>
+                    @endif
                 </div>
             </div>
             <hr>
             <div class="container">
                 <div class="row">
                     <div class="col-8">
+                        @if(Auth()->check())
                         <h6>Pubica un comentario</h6>
-                        <form action="/comment/add">
-                            <textarea name="comment-area" class="form-control" id="post-text-area" disabled>
-                            
-                            </textarea>
-                            <button type="submit" class="btn btn-login">
+                            <form action="/createcomment" method="post" id="create-comment-form">
+                            @csrf
+                            <textarea name="comentario" class="form-control" id="post-text-area" maxlength="255"></textarea>
+                            <input type="hidden" name="id_publicacion" value="{{ $postContent->id_publicacion }}">
+                            <button type="submit" id="submit-comment-btn" class="btn btn-login"> 
                                 Publicar
                             </button>
                         </form>
+                        @else 
+                        <div class="w-100 justify-content-center">
+                            <h5>Ingrese para comentar</h5>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
             <hr>
             <div class="container-fluid" id="comment-section">
+            @if(!empty($postComments))
+                @foreach($postComments as $comment)
                 <!-- Comment -->
                 <div class="row" id="original-post-container">
                     <div class="d-none d-sm-block col-md-2 col-lg-1">
-                        <a href="/profile" target="_blank" rel="noopener noreferrer">
-                            <img src="{{asset('img/user-img/user-generic-photo.jpg')}}" class="forum-post-user-img" alt="Avatar img">
+                        <a href="/profile/{{ $comment->userId }}" target="_blank">
+                            <img src="{{ $comment->avatarPicPath }}" class="forum-post-user-img" alt="Avatar img">
                         </a>
                     </div>
                     <div class="col-xs-8 col-sm-10 col-md-9 col-lg-8">
-                        <h5>Fulano de tal</h5>
-                        <h6><i class="far fa-clock"></i> 3 de enero de 2019 - 2:30pm</h6>
-                        <p>
-                            Hola, los cachorros pueden comer croquetas desde Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Atque expedita officia provident itaque quaerat, in dignissimos laboriosam recusandae, 
-                            fuga ea molestias est hic ex temporibus aliquam veritatis neque doloremque unde.
-                        </p>
+                        <h5><a href="/profile/{{ $comment->userId }}" target="_blank"> {{ $comment->nickname }} </a></h5>
+                        <h6><i class="far fa-clock"></i> {{ $comment->created_at }} </h6>
+                        <p> {{ $comment->comentario }} </p>
                     </div>
-                    <div class="col-10">
-                        <button type=button class="btn btn-success">
-                            <i class="fas fa-thumbs-up"></i>
-                        </button>
-                        <span class="text-success">15</span>
-                        <button type=button class="btn btn-danger">
-                            <i class="fas fa-thumbs-down"></i>
-                        </button>
-                        <span class="text-danger">1</span>
-                    </div>
-                    <div class="col-2">
-                        <button class="btn btn-secondary font-weight-light">
+                    <div class="col-12">
+                        @if(Auth()->check())
+                        <button class="btn btn-secondary font-weight-light" _cmnt-id="{{ $comment->commentId }}">
                             Reportar
                         </button>
+                        @endif
                     </div>
                 </div>
                 <!-- Comment -->
+                @endforeach
+            @else 
+                <div class="w-100 justify-content-center">
+                    <h4>No hay comentarios todavia</h4>
+                </div>
+            @endif
             </div>
         </div>
     </div>

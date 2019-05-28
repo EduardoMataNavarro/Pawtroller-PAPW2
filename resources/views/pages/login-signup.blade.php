@@ -19,13 +19,13 @@
                     <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
                         <form method="POST" action="{{route('login')}}">
                             @csrf
-                            <label for="">Correo</label>
-                            <input type="email" name="email" id="email" value="{{old('email')}}" class="form-control" required>
+                            <label for="">Correo o nombre de usuario</label>
+                            <input type="text" name="name" id="email" value="{{old('name')}}" class="form-control" required>
                             
-                            @if($errors->has('email'))
+                            @if($errors->has('name'))
                             <br>
                             <div class="alert alert-danger" role="alert">
-                                {{ $errors->first('email') }}
+                                {{ $errors->first('name') }}
                             </div>
                             @endif
 
@@ -62,7 +62,7 @@
                             <label for="">Correo</label>
                             <input type="mail" name="email" id="" class="form-control">
                             <label for="">Contraseña</label>
-                            <input type="password" name="password" id="" class="form-control">
+                            <input type="password" name="password" id="" class="form-control" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                             <label for="">Confirmar contraseña</label>
                             <input type="password" name="password_confirmation" id="" class="form-control">
                             <label for="">Telefono (opcional)</label>

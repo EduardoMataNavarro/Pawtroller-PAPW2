@@ -12,43 +12,43 @@ class ColorMascotaSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Amarillo'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Atigrado'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Azul'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Blanco'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Blanco y Negro'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Canela'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Crema'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Dorado'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Gris'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Marron claro'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Marron oscuro'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Negro'
         ]);
-        DB::table('colorMascota')->insert([
+        DB::table('color_mascotas')->insert([
             'descripcion' => 'Sal y pimienta'
         ]);
     }

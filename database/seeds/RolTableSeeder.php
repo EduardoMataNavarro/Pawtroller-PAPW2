@@ -13,23 +13,23 @@ class RolTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('rol')->insert([
+        DB::table('rols')->insert([
             'descripcion' => 'Aministrador',
             'relevancia' => 4
         ]);
-        DB::table('rol')->insert([
+        DB::table('rols')->insert([
             'descripcion' => 'Moderador',
             'relevancia' => 3
         ]);
-        DB::table('rol')->insert([
+        DB::table('rols')->insert([
             'descripcion' => 'Usuario',
             'relevancia' => 2
         ]);
-        DB::table('rol')->insert([
+        DB::table('rols')->insert([
             'descripcion' => 'Invitado',
             'relevancia' => 1
         ]);
-        DB::table('rol')->insert([
+        DB::table('rols')->insert([
             'descripcion' => 'Bloqueado',
             'relevancia' => 0
         ]);
