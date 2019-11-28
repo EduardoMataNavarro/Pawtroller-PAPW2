@@ -69,19 +69,21 @@
                             </h6>
                             <h6><strong>Telefono: </strong> {{ $ownerData->telefono }} </h6>
                             <hr>
-                            <!-- <h3>Pregunta al dueño</h3>
+                            <h3>Pregunta al dueño</h3>
                             <br>
                             <div class="row">
                                 <div class="col-sm-12 col-md-8 col-lg-6">
                                 @if(Auth::check())
+                                    @if($ownerData->id != Auth::id())
                                     <form action="/commentpet" method="post">
                                         @csrf
                                         <input type="hidden" name="id_mascota" value="{{ $mascotaInfo->id }}">
-                                        <textarea name="comment" id="pet-comment-box" class="form-control" cols="10" rows="3"></textarea>
+                                        <textarea name="comment" id="pet-comment-box" class="form-control" cols="10" rows="2"></textarea>
                                         <button type="submit" class="btn btn-login">
                                             Comentar
                                         </button>
                                     </form>
+                                    @endif
                                 @else 
                                 <div class="w-100">
                                     <span class="h3">Ingrese para preguntar</span>
@@ -89,9 +91,10 @@
                                 <hr>
                                 @endif
                                 </div> 
-                            </div>-->
-                            <!-- <div class="row">
-                                    <div class="col-sm-12 col-md-10 col-lg-8">
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-10 col-lg-8">
                                     <span class="h5"><a href="/profile/" target="_blank">Tito </a></span>
                                     -
                                     <span class="h6">Fecha</span>
@@ -108,9 +111,8 @@
                                             >
                                             <span>Inbox</span>
                                         </div>
-                                    </div>
-                                </div>-->
-                                 
+                                </div>
+                            </div>  
                         </div>
                         <div class="tab-pane fade" id="fotos" role="tabpanel" aria-labelledby="fotos-tab">
                             <br>

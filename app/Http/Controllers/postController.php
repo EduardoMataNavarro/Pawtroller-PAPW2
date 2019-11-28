@@ -173,6 +173,6 @@ class postController extends Controller
         $post->id_categoria = $request->input('categoria');
         $post->save();
 
-        return response()->back();
+        return redirect()->back();
     }
 }

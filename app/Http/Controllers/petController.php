@@ -37,6 +37,7 @@ class petController extends Controller
             'ownerData'    => User::select('name', 'id', 'nickname', 'email', 'telefono')
                                     ->join('mascotas', 'users.id', '=', 'mascotas.id_usuario')
                                     ->where('mascotas.id_mascota', '=', $id)->first(),
+            'petQuestions' => UsuarioPreguntaMascota::where('id_mascota', '=', $id),
         ];
         return view('pages.pet', $petInfo);
     }
